@@ -1,14 +1,14 @@
 // server/index.js
 
-const express = require("express");
-const dotenv = require("dotenv");
+import express, { json } from "express";
+import { config } from "dotenv";
 
-dotenv.config();
+config();
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(express.json());
+app.use(json());
 
 app.get("/", (req, res) => {
   res.send("Hello from Express!");
